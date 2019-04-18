@@ -30,19 +30,16 @@ At the same time to support any custom attributes through
 
 ```jsx
 // demo
-import {createElement, Component, render} from 'rax';
-import View from 'rax-view';
-import Button from 'rax-button';
+import { createElement, useState } from 'rax';
+import Button from './mod';
 
-class App extends Component {
-  render() {
-    return (
-      <View style={{ width: 750 }}>
-        <Button onPress={(evt) => { alert('你好'); }}>点我</Button>
-      </View>
-    );
-  }
-}
+export default (props) => {
+  const [buttonText, setButtonText] = useState('normal');
 
-render(<App />);
+  return (
+    <Button onClick={(evt) => {
+      setButtonText('click');
+    }}>{buttonText}</Button>
+  );
+};
 ```
