@@ -31,7 +31,7 @@ At the same time to support any custom attributes through
 ```jsx
 // demo
 import { createElement, useState } from 'rax';
-import Button from './mod';
+import Button from 'rax-button';
 
 export default (props) => {
   const [buttonText, setButtonText] = useState('normal');
