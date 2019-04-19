@@ -22,10 +22,15 @@ const Button = (props) => {
   }
 
   return (
-    <View role="button" {...props}>
+    <View role="button" {...props} style={btnStyle}>
       {content}
     </View>
   );
+};
+
+const btnStyle = {
+  position: 'relative',
+  cursor: 'pointer',
 };
 
 export default Button;

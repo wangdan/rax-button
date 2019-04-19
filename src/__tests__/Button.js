@@ -25,7 +25,7 @@ describe('Button', () => {
 
     expect(tree.tagName).toEqual('DIV');
     expect(tree.children[0].children[0]).toEqual('normal');
-    // expect(tree).toMatchSnapshot();
+    expect(tree).toMatchSnapshot();
 
     tree.eventListeners.click();
     tree = component.toJSON();

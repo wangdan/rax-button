@@ -11,6 +11,8 @@ Object {
         "normal",
       ],
       "style": Object {
+        "0": undefined,
+        "1": Object {},
         "alignContent": "flex-start",
         "border": "0 solid black",
         "boxSizing": "border-box",
@@ -18,7 +20,6 @@ Object {
         "flexDirection": "column",
         "flexShrink": 0,
         "fontSize": 32,
-        "position": "relative",
         "whiteSpace": "pre-wrap",
       },
       "tagName": "SPAN",
