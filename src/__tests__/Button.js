@@ -2,12 +2,16 @@ import { createElement, useState } from 'rax';
 import renderer from 'rax-test-renderer';
 import Button from '../';
 
-const ButtonTest = (props) => {
-  const [buttonText, setButtonText] = useState('normal');
+// use jest.useFakeTimers()
+jest.useFakeTimers();
 
+const ButtonTest = () => {
+  const [buttonText, setButtonText] = useState('normal');
   return (
     <Button onClick={(evt) => {
       setButtonText('click');
+      // run setTimeout callback
+      jest.runAllTimers();
     }}>{buttonText}</Button>
   );
 };
@@ -24,7 +28,6 @@ describe('Button', () => {
     // expect(tree).toMatchSnapshot();
 
     tree.eventListeners.click();
-
     tree = component.toJSON();
     expect(tree.children[0].children[0]).toEqual('click');
   });
